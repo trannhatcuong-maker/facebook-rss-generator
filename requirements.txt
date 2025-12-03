@@ -1,3 +1,5 @@
-facebook-scraper
+facebook-scraper==0.2.63
 feedgen
 pytz
+lxml
+html5lib
