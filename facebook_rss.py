@@ -1,6 +1,45 @@
 #!/usr/bin/env python3
 """
 Script tạo RSS Feed từ Facebook - Dùng cho GitHub Actions
+FIXED VERSION
+"""
+
+import json
+import os
+import sys
+from datetime import datetime, timezone
+
+# ===== FIX IMPORT ERROR =====
+try:
+    from facebook_scraper import get_posts
+    print("✅ Đã import facebook-scraper thành công")
+except ImportError as e:
+    print(f"❌ Lỗi import: {e}")
+    print("📦 Đang cài đặt dependencies...")
+    os.system(f"{sys.executable} -m pip install facebook-scraper==0.2.63 lxml html5lib --quiet")
+    from facebook_scraper import get_posts
+
+try:
+    from feedgen.feed import FeedGenerator
+except ImportError:
+    os.system(f"{sys.executable} -m pip install feedgen --quiet")
+    from feedgen.feed import FeedGenerator
+
+try:
+    import pytz
+except ImportError:
+    os.system(f"{sys.executable} -m pip install pytz --quiet")
+    import pytz
+# ============================
+
+# Đọc cấu hình
+with open('config.json', 'r', encoding='utf-8') as f:
+    config = json.load(f)
+
+# ... (phần còn lại giữ nguyên từ dòng này trở đi)
+#!/usr/bin/env python3
+"""
+Script tạo RSS Feed từ Facebook - Dùng cho GitHub Actions
 """
 
 import json
