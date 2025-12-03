@@ -3,3 +3,4 @@ feedgen
 pytz
 lxml
 html5lib
+requests
