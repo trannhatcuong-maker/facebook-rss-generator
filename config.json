@@ -1,0 +1,17 @@
+{
+    "facebook_pages": [
+        {
+            "name": "Kenh14",
+            "username": "kenh14.vn",
+            "max_posts": 10,
+            "rss_filename": "kenh14.xml"
+        },
+        {
+            "name": "VnExpress",
+            "username": "vnexpress.net",
+            "max_posts": 15,
+            "rss_filename": "vnexpress.xml"
+        }
+    ],
+    "update_interval_hours": 1
+}
